@@ -154,13 +154,13 @@ fn generate_client<P>(writer: &mut FileWriter, service: &Service, protocol_gener
                 }}
             }}
 
-            pub fn credentials_provider(&self) -> &P {
+            pub fn credentials_provider(&self) -> &P {{
                 &self.credentials_provider
-            }
+            }}
 
-            pub fn request_dispatcher(&self) -> &D {
+            pub fn request_dispatcher(&self) -> &D {{
                 &self.dispatcher
-            }
+            }}
 
         ",
         service_name = match &service.metadata.service_abbreviation {
