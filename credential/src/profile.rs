@@ -1,4 +1,3 @@
-use std::ascii::AsciiExt;
 use std::collections::HashMap;
 use std::env;
 use std::fs;
@@ -42,6 +41,7 @@ impl ProfileProvider {
     /// `~/.aws/credentials` (Linux/Mac)
     /// `%USERPROFILE%\.aws\credentials` (Windows)
     fn default_profile_location() -> Result<PathBuf, CredentialsError> {
+        #![allow(deprecated)]
         match env::home_dir() {
             Some(home_path) => {
                 let mut credentials_path = PathBuf::from(".aws");
